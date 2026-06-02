@@ -33,7 +33,6 @@ export default function Navbar({ onApplyClick, onBookTourClick }: NavbarProps) {
 
   const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    setIsMobileMenuOpen(false);
     
     const id = href.replace('#', '');
     const element = document.getElementById(id);
@@ -56,6 +55,12 @@ export default function Navbar({ onApplyClick, onBookTourClick }: NavbarProps) {
       // Update URL hash state transparently without anchor jump
       window.history.pushState(null, '', href);
     }
+
+    // Delay closing the mobile menu slightly to ensure touch event lifecycles complete
+    // and smooth scroll begins without DOM unmounting interference
+    setTimeout(() => {
+      setIsMobileMenuOpen(false);
+    }, 250);
   };
 
   return (
@@ -122,9 +127,12 @@ export default function Navbar({ onApplyClick, onBookTourClick }: NavbarProps) {
             href="#" 
             onClick={(e) => {
               e.preventDefault();
-              setIsMobileMenuOpen(false);
               window.scrollTo({ top: 0, behavior: 'smooth' });
               window.history.pushState(null, '', '#');
+              // Delay closing menu slightly to prevent touch event cancellation
+              setTimeout(() => {
+                setIsMobileMenuOpen(false);
+              }, 250);
             }}
             className="cursor-pointer"
           >
