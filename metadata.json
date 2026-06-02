@@ -1,0 +1,6 @@
+{
+  "name": "Echelon Nursery & Primary School",
+  "description": "A premium, modern, and mobile-first website for Echelon Nursery & Primary School in Lagos, Nigeria.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
