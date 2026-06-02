@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, MessageSquare, ChevronDown, ChevronUp, ExternalLink, HelpCircle } from 'lucide-react';
-import CampusMap from './CampusMap';
 
 export default function Contact() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -164,9 +163,6 @@ export default function Contact() {
           </div>
 
         </div>
-
-        {/* ROW 3: CAMPUS NAVIGATION AND TRANSIT INTEGRATED HUB */}
-        <CampusMap />
 
       </div>
     </section>

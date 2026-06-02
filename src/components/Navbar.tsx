@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail, MapPin, GraduationCap, Calendar, ShieldCheck, ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 import SchoolLogo from './SchoolLogo';
 
 interface NavbarProps {
@@ -163,48 +164,70 @@ export default function Navbar({ onApplyClick, onBookTourClick }: NavbarProps) {
         </div>
 
         {/* 3. MOBILE DROP-DOWN MENU DRAWER */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 w-full bg-white text-slate-950 border-b border-slate-200 shadow-xl py-6 px-4 space-y-5 animate-in slide-in-from-top-4 duration-300">
-            <div className="flex flex-col gap-3.5">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-base font-bold font-display text-slate-800 hover:text-echelon-blue border-b border-slate-50 pb-2.5 transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <>
+              {/* Blur backdrop overlay to easily dismiss the menu */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="lg:hidden fixed inset-0 z-10 bg-slate-900/45 backdrop-blur-sm"
+                style={{ top: '100%' }}
+              />
 
-            <div className="grid grid-cols-2 gap-3.5 pt-2">
-              <button
-                onClick={() => { setIsMobileMenuOpen(false); onBookTourClick(); }}
-                className="h-11 border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-xl font-bold font-display text-sm flex items-center justify-center gap-2 transition-colors"
+              {/* Drawer dropdown panel */}
+              <motion.div
+                key="mobile-nav-menu"
+                initial={{ opacity: 0, height: 0, y: -10 }}
+                animate={{ opacity: 1, height: 'auto', y: 0 }}
+                exit={{ opacity: 0, height: 0, y: -10 }}
+                transition={{ duration: 0.25, ease: 'easeOut' }}
+                className="lg:hidden absolute top-full left-0 w-full bg-white text-slate-950 border-b border-slate-200 shadow-xl py-6 px-4 space-y-5 z-20 overflow-y-auto max-h-[75vh]"
               >
-                <Calendar className="w-4 h-4 text-echelon-gold" />
-                <span>Visit Campus</span>
-              </button>
-              
-              <button
-                onClick={() => { setIsMobileMenuOpen(false); onApplyClick(); }}
-                className="h-11 bg-echelon-blue text-white rounded-xl font-bold font-display text-sm flex items-center justify-center gap-2 hover:bg-echelon-blue-hover transition-colors shadow-md shadow-blue-500/10"
-              >
-                <GraduationCap className="w-4 h-4" />
-                <span>Online Apply</span>
-              </button>
-            </div>
+                <div className="flex flex-col gap-3.5">
+                  {navLinks.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="text-base font-bold font-display text-slate-800 hover:text-echelon-blue border-b border-slate-100 pb-2.5 transition-colors block"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
 
-            {/* Quick school info inside mobile panel */}
-            <div className="bg-slate-50 p-3.5 rounded-xl text-center">
-              <p className="text-xs text-slate-500">Need immediate assistance with admission?</p>
-              <a href="tel:+2348148452841" className="text-sm font-bold text-echelon-blue flex items-center justify-center gap-1.5 mt-1 hover:underline">
-                <Phone className="w-4 h-4" /> +234 814 845 2841
-              </a>
-            </div>
-          </div>
-        )}
+                <div className="grid grid-cols-2 gap-3.5 pt-2">
+                  <button
+                    onClick={() => { setIsMobileMenuOpen(false); onBookTourClick(); }}
+                    className="h-11 border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-xl font-bold font-display text-sm flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                  >
+                    <Calendar className="w-4 h-4 text-echelon-gold" />
+                    <span>Visit Campus</span>
+                  </button>
+                  
+                  <button
+                    onClick={() => { setIsMobileMenuOpen(false); onApplyClick(); }}
+                    className="h-11 bg-echelon-blue text-white rounded-xl font-bold font-display text-sm flex items-center justify-center gap-2 hover:bg-echelon-blue-hover transition-colors shadow-md shadow-blue-500/10 cursor-pointer"
+                  >
+                    <GraduationCap className="w-4 h-4" />
+                    <span>Online Apply</span>
+                  </button>
+                </div>
+
+                {/* Quick school info inside mobile panel */}
+                <div className="bg-slate-50 p-3.5 rounded-xl text-center">
+                  <p className="text-xs text-slate-500">Need immediate assistance with admission?</p>
+                  <a href="tel:+2348148452841" className="text-sm font-bold text-echelon-blue flex items-center justify-center gap-1.5 mt-1 hover:underline">
+                    <Phone className="w-4 h-4" /> +234 814 845 2841
+                  </a>
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
       </nav>
     </header>
   );

@@ -25,11 +25,7 @@ export default function Hero({ onApplyClick, onBookTourClick }: HeroProps) {
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left Primary Hero Copy */}
         <div className="lg:col-span-7 text-left space-y-6">
-          {/* Tagline Badge */}
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-500/10 text-white border border-blue-500/15 backdrop-blur-sm self-start">
-            <span className="w-2 h-2 rounded-full bg-echelon-blue animate-pulse"></span>
-            <span className="text-[10px] font-extrabold tracking-widest uppercase font-mono text-echelon-blue">Now Enrolling for 2026/2027</span>
-          </div>
+
 
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white leading-[1.05] tracking-tighter uppercase font-display">
             Building <span className="text-echelon-blue font-serif italic tracking-wide lowercase font-normal italic">future leaders</span> Through <span className="text-echelon-gold">Quality</span> Education
