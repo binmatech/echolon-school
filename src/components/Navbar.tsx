@@ -31,6 +31,33 @@ export default function Navbar({ onApplyClick, onBookTourClick }: NavbarProps) {
     { label: 'Contact', href: '#contact' },
   ];
 
+  const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+    
+    const id = href.replace('#', '');
+    const element = document.getElementById(id);
+    if (element) {
+      // Calculate dynamic header offset
+      let headerHeight = 75; // sticky nav height fallback
+      const navElement = document.getElementById('navbar-sticky-header');
+      if (navElement) {
+        headerHeight = navElement.offsetHeight;
+      }
+      
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerHeight - 12; // extra padding for visual breathability
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      // Update URL hash state transparently without anchor jump
+      window.history.pushState(null, '', href);
+    }
+  };
+
   return (
     <header className="fixed top-0 left-0 w-full z-50">
       {/* 1. TOP UTILITY HEADER BAR */}
@@ -91,7 +118,16 @@ export default function Navbar({ onApplyClick, onBookTourClick }: NavbarProps) {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
           {/* Dynamic Logo Crest with White/Dark adaptation */}
-          <a href="#" className="cursor-pointer">
+          <a 
+            href="#" 
+            onClick={(e) => {
+              e.preventDefault();
+              setIsMobileMenuOpen(false);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              window.history.pushState(null, '', '#');
+            }}
+            className="cursor-pointer"
+          >
             <SchoolLogo
               size="md"
               showText={true}
@@ -107,6 +143,7 @@ export default function Navbar({ onApplyClick, onBookTourClick }: NavbarProps) {
               <a
                 key={link.label}
                 href={link.href}
+                onClick={(e) => handleScrollToSection(e, link.href)}
                 className={`text-sm font-semibold tracking-wide hover:-translate-y-0.5 transition-all relative py-1 font-display hover:text-echelon-blue group ${
                   isScrolled ? 'text-slate-700' : 'text-slate-200'
                 }`}
@@ -191,7 +228,7 @@ export default function Navbar({ onApplyClick, onBookTourClick }: NavbarProps) {
                     <a
                       key={link.label}
                       href={link.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      onClick={(e) => handleScrollToSection(e, link.href)}
                       className="text-base font-bold font-display text-slate-800 hover:text-echelon-blue border-b border-slate-100 pb-2.5 transition-colors block"
                     >
                       {link.label}
