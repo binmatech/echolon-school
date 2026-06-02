@@ -46,10 +46,12 @@ export default function WhyChooseUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#00AEEF] font-mono bg-[#00AEEF]/10 px-3.5 py-1.5 rounded-full border border-blue-200">
-            The Echelon Difference
-          </span>
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="inline-block">
+            <span className="inline-block text-[10px] font-extrabold uppercase tracking-widest text-[#00AEEF] font-mono bg-[#00AEEF]/10 px-3.5 py-1.5 rounded-full border border-blue-200">
+              The Echelon Difference
+            </span>
+          </div>
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase font-display leading-[1.05]">
             Why Discerning Parents choose <span className="text-echelon-blue font-serif italic tracking-wide lowercase italic font-normal">echelon schools</span>
           </h2>

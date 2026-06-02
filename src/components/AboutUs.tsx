@@ -65,9 +65,11 @@ export default function AboutUs() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Block: Narrative Card */}
           <div className="lg:col-span-6 space-y-6 text-left">
-            <span className="text-[10px] font-extrabold uppercase tracking-widest text-echelon-blue ml-1 font-mono bg-[#00AEEF]/5 px-3 py-1.5 rounded-md border border-blue-100">
-              Welcome to Echelon
-            </span>
+            <div className="inline-block">
+              <span className="inline-block text-[10px] font-extrabold uppercase tracking-widest text-echelon-blue font-mono bg-[#00AEEF]/10 px-3.5 py-1.5 rounded-full border border-blue-200/50">
+                Welcome to Echelon
+              </span>
+            </div>
             <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase font-display leading-[1.05]">
               Where Academic <span className="text-echelon-blue font-serif italic tracking-wide lowercase italic font-normal">potential</span> Meets Creative Leadership
             </h2>

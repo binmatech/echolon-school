@@ -59,10 +59,12 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#F4B400] font-mono bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full">
-            Parent Outpours & Reviews
-          </span>
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="inline-block">
+            <span className="inline-block text-[10px] font-extrabold uppercase tracking-widest text-[#F4B400] font-mono bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full">
+              Parent Outpours & Reviews
+            </span>
+          </div>
           <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase font-display text-center leading-[1.05]">
             What Echelon Families <span className="text-echelon-blue font-serif italic tracking-wide lowercase italic font-normal">are saying</span>
           </h2>

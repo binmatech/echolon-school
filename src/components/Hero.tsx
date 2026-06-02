@@ -25,7 +25,11 @@ export default function Hero({ onApplyClick, onBookTourClick }: HeroProps) {
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left Primary Hero Copy */}
         <div className="lg:col-span-7 text-left space-y-6">
-
+          <div className="inline-block">
+            <span className="inline-block text-[10px] font-extrabold uppercase tracking-widest text-echelon-blue font-mono bg-[#00AEEF]/10 px-3.5 py-1.5 rounded-full border border-blue-200/20">
+              Welcome to Echelon Space
+            </span>
+          </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white leading-[1.05] tracking-tighter uppercase font-display">
             Building <span className="text-echelon-blue font-serif italic tracking-wide lowercase font-normal italic">future leaders</span> Through <span className="text-echelon-gold">Quality</span> Education

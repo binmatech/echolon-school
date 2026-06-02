@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FileText, Download, Phone, Mail, GraduationCap, ArrowRight, CheckSquare, X, ShieldAlert } from 'lucide-react';
+import { FileText, Download, Phone, Mail, GraduationCap, ArrowRight, CheckSquare, X, ShieldAlert, Calendar } from 'lucide-react';
 
 interface AdmissionsProps {
   onApplyClick: () => void;
@@ -61,9 +61,11 @@ export default function Admissions({ onApplyClick, onBookTourClick }: Admissions
           
           {/* Left Text Box */}
           <div className="lg:col-span-6 space-y-6 text-left">
-            <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#00AEEF] font-mono bg-[#00AEEF]/10 px-3.5 py-1.5 rounded-full border border-blue-200">
-              Enrolment 2026/2027
-            </span>
+            <div className="inline-block">
+              <span className="inline-block text-[10px] font-extrabold uppercase tracking-widest text-[#00AEEF] font-mono bg-[#00AEEF]/10 px-3.5 py-1.5 rounded-full border border-blue-200">
+                Enrolment 2026/2027
+              </span>
+            </div>
             <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase font-display leading-[1.05]">
               Admission guidelines & <span className="text-echelon-blue font-serif italic tracking-wide lowercase italic font-normal">simplified onboarding</span>
             </h2>
@@ -121,17 +123,18 @@ export default function Admissions({ onApplyClick, onBookTourClick }: Admissions
             <div className="pt-6 border-t border-slate-200/60 flex flex-col sm:flex-row gap-3">
               <button
                 onClick={onApplyClick}
-                className="flex-1 h-12 bg-echelon-blue text-white rounded-xl font-bold font-display text-xs tracking-wider uppercase hover:bg-echelon-blue-hover transition-colors flex items-center justify-center gap-1.5 shadow"
+                className="flex-1 min-h-[3rem] py-3 px-4 bg-echelon-blue text-white rounded-xl font-bold font-display text-xs sm:text-[11px] md:text-xs tracking-wider uppercase hover:bg-echelon-blue-hover transition-colors flex items-center justify-center gap-2 shadow"
               >
-                <GraduationCap className="w-4 h-4" />
-                <span>Begin Online Application</span>
+                <GraduationCap className="w-4 h-4 flex-shrink-0 text-echelon-gold" />
+                <span className="text-center">Begin Online Application</span>
               </button>
               
               <button
                 onClick={onBookTourClick}
-                className="flex-1 h-12 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold font-display text-xs tracking-wider uppercase hover:bg-slate-50 transition-colors flex items-center justify-center gap-1.5"
+                className="flex-1 min-h-[3rem] py-3 px-4 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold font-display text-xs sm:text-[11px] md:text-xs tracking-wider uppercase hover:bg-slate-50 transition-colors flex items-center justify-center gap-2"
               >
-                <span>Request Assessment Visit</span>
+                <Calendar className="w-4 h-4 flex-shrink-0 text-amber-500" />
+                <span className="text-center">Request Assessment Visit</span>
               </button>
             </div>
           </div>

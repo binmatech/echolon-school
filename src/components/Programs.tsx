@@ -53,10 +53,12 @@ export default function Programs({ onApplyClick }: ProgramsProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#F4B400] font-mono bg-[#F4B400]/10 px-3.5 py-1.5 rounded-full border border-amber-100">
-            Ages & Curriculums
-          </span>
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="inline-block">
+            <span className="inline-block text-[10px] font-extrabold uppercase tracking-widest text-[#F4B400] font-mono bg-[#F4B400]/10 px-3.5 py-1.5 rounded-full border border-amber-100">
+              Ages & Curriculums
+            </span>
+          </div>
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase font-display text-center leading-[1.05]">
             Our Care & Academic <span className="text-[#F4B400] font-serif italic tracking-wide lowercase italic font-normal">programs</span>
           </h2>
