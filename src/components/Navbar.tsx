@@ -67,7 +67,7 @@ export default function Navbar({ onApplyClick, onBookTourClick }: NavbarProps) {
     <header className="fixed top-0 left-0 w-full z-50">
       {/* 1. TOP UTILITY HEADER BAR */}
       <div 
-        className={`bg-slate-900 text-slate-100 text-[11px] md:text-xs relative border-b border-slate-800 transition-all duration-300 overflow-hidden ${
+        className={`hidden lg:block bg-slate-900 text-slate-100 text-[11px] md:text-xs relative border-b border-slate-800 transition-all duration-300 overflow-hidden ${
           isScrolled 
             ? 'max-h-0 py-0 opacity-0 border-none' 
             : 'max-h-20 py-2.5 px-4 sm:px-6 opacity-100 animate-fade-in'
