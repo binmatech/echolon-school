@@ -159,29 +159,29 @@ export default function ToursAndAdmissionsPortal({
     <>
       {/* 1. APPLY FOR ADMISSION MODAL */}
       {isApplyOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/65 backdrop-blur-sm overflow-y-auto">
-          <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden my-8 animate-in fade-in zoom-in-95 duration-200">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/65 backdrop-blur-sm flex items-start sm:items-center justify-center p-2 sm:p-4">
+          <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden my-auto animate-in fade-in zoom-in-95 duration-200 flex flex-col max-h-[96vh] sm:max-h-[90vh]">
             {/* Modal Header */}
-            <div className="bg-gradient-to-r from-echelon-blue to-blue-700 p-6 text-white relative">
+            <div className="bg-gradient-to-r from-echelon-blue to-blue-700 p-4 sm:p-6 text-white relative flex-shrink-0">
               <button
                 onClick={() => { setIsApplyOpen(false); setJustAppliedId(null); setValidationError(null); }}
                 className="absolute top-4 right-4 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
-              <div className="flex items-center gap-3">
-                <div className="p-3 bg-white/15 rounded-xl">
-                  <GraduationCap className="w-8 h-8 text-echelon-gold" />
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="p-2 sm:p-3 bg-white/15 rounded-xl flex-shrink-0">
+                  <GraduationCap className="w-6 h-6 sm:w-8 sm:h-8 text-echelon-gold" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold font-display">Student Admission Application</h3>
-                  <p className="text-sm text-blue-100 mt-0.5">Echelon Nursery & Primary School Portal • Session 2026/2027</p>
+                  <h3 className="text-lg sm:text-xl font-bold font-display">Student Admission Application</h3>
+                  <p className="text-xs sm:text-sm text-blue-100 mt-0.5">Echelon Nursery & Primary School Portal • Session 2026/2027</p>
                 </div>
               </div>
             </div>
 
             {/* Modal Content */}
-            <div className="p-6 max-h-[72vh] overflow-y-auto">
+            <div className="p-4 sm:p-6 overflow-y-auto flex-1">
               {justAppliedId ? (
                 /* Success screen */
                 <div className="text-center py-8 px-4 flex flex-col items-center">
@@ -227,16 +227,16 @@ export default function ToursAndAdmissionsPortal({
                     </div>
                   </div>
 
-                  <div className="mt-8 flex gap-3 w-full max-w-md">
+                  <div className="mt-8 flex flex-col sm:flex-row gap-3 w-full max-w-md">
                     <button
                       onClick={() => setJustAppliedId(null)}
-                      className="flex-1 py-3 px-4 border border-slate-300 rounded-xl font-bold font-display hover:bg-slate-50 transition-colors text-slate-700 text-sm"
+                      className="w-full sm:flex-1 py-3 px-4 border border-slate-300 rounded-xl font-bold font-display hover:bg-slate-50 transition-colors text-slate-700 text-sm"
                     >
                       Apply Another Child
                     </button>
                     <button
                       onClick={() => { setIsApplyOpen(false); setJustAppliedId(null); setShowPortalHub(true); }}
-                      className="flex-1 py-3 px-4 bg-echelon-blue text-white rounded-xl font-bold font-display hover:bg-echelon-blue-hover transition-colors text-sm flex items-center justify-center gap-1.5"
+                      className="w-full sm:flex-1 py-3 px-4 bg-echelon-blue text-white rounded-xl font-bold font-display hover:bg-echelon-blue-hover transition-colors text-sm flex items-center justify-center gap-1.5"
                     >
                       View Parent Hub <ArrowRight className="w-4 h-4" />
                     </button>
@@ -385,21 +385,21 @@ export default function ToursAndAdmissionsPortal({
                   </div>
 
                   {/* Form Actions */}
-                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
-                    <span className="text-xs text-slate-500 flex items-center gap-1.5 font-mono">
+                  <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <span className="text-xs text-slate-500 flex items-center gap-1.5 font-mono self-start sm:self-auto">
                       <LockIcon /> Secure SSL Data Transfer
                     </span>
-                    <div className="flex gap-2.5">
+                    <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
                       <button
                         type="button"
                         onClick={() => setIsApplyOpen(false)}
-                        className="h-11 px-5 border border-slate-200 rounded-xl font-bold font-display hover:bg-slate-50 text-slate-700 text-sm transition-colors"
+                        className="h-11 px-5 border border-slate-200 rounded-xl font-bold font-display hover:bg-slate-50 text-slate-700 text-sm transition-colors w-full sm:w-auto"
                       >
                         Cancel
                       </button>
                       <button
                         type="submit"
-                        className="h-11 px-6 bg-gradient-to-r from-echelon-blue to-blue-600 text-white rounded-xl font-bold font-display hover:opacity-95 text-sm flex items-center gap-1.5 transition-all shadow-md shadow-blue-500/15"
+                        className="h-11 px-6 bg-gradient-to-r from-echelon-blue to-blue-600 text-white rounded-xl font-bold font-display hover:opacity-95 text-sm flex items-center justify-center gap-1.5 transition-all shadow-md shadow-blue-500/15 w-full sm:w-auto"
                       >
                         Submit Application <ArrowRight className="w-4 h-4" />
                       </button>
@@ -414,29 +414,29 @@ export default function ToursAndAdmissionsPortal({
 
       {/* 2. BOOK A SCHOOL TOUR MODAL */}
       {isBookTourOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/65 backdrop-blur-sm overflow-y-auto">
-          <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/65 backdrop-blur-sm flex items-start sm:items-center justify-center p-2 sm:p-4">
+          <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden my-auto animate-in fade-in zoom-in-95 duration-200 flex flex-col max-h-[96vh] sm:max-h-[90vh]">
             {/* Modal Header */}
-            <div className="bg-gradient-to-r from-echelon-gold to-amber-600 p-6 text-white relative">
+            <div className="bg-gradient-to-r from-echelon-gold to-amber-600 p-4 sm:p-6 text-white relative flex-shrink-0">
               <button
                 onClick={() => { setIsBookTourOpen(false); setJustBookedId(null); setValidationError(null); }}
                 className="absolute top-4 right-4 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
-              <div className="flex items-center gap-3">
-                <div className="p-3 bg-white/15 rounded-xl">
-                  <Calendar className="w-8 h-8 text-white" />
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="p-2 sm:p-3 bg-white/15 rounded-xl flex-shrink-0">
+                  <Calendar className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold font-display">Schedule a Private Tour</h3>
-                  <p className="text-xs text-amber-50 mt-0.5">Experience our campus, smart classrooms, & ICT Lab firsthand</p>
+                  <h3 className="text-lg sm:text-xl font-bold font-display">Schedule a Private Tour</h3>
+                  <p className="text-xs sm:text-sm text-amber-50 mt-0.5">Experience our campus, smart classrooms, & ICT Lab firsthand</p>
                 </div>
               </div>
             </div>
 
             {/* Modal Content */}
-            <div className="p-6">
+            <div className="p-4 sm:p-6 overflow-y-auto flex-1">
               {justBookedId ? (
                 /* Success */
                 <div className="text-center py-6 px-4 flex flex-col items-center">
@@ -467,16 +467,16 @@ export default function ToursAndAdmissionsPortal({
                     </div>
                   </div>
 
-                  <div className="mt-6 flex gap-3 w-full max-w-sm">
+                  <div className="mt-6 flex flex-col sm:flex-row gap-3 w-full max-w-sm">
                     <button
                       onClick={() => { setIsBookTourOpen(false); setJustBookedId(null); }}
-                      className="flex-1 py-2.5 px-4 bg-echelon-gold text-white font-bold font-display hover:bg-echelon-gold-hover rounded-xl text-sm transition-colors"
+                      className="w-full sm:flex-1 py-2.5 px-4 bg-echelon-gold text-white font-bold font-display hover:bg-echelon-gold-hover rounded-xl text-sm transition-colors"
                     >
                       Done
                     </button>
                     <button
                       onClick={() => { setIsBookTourOpen(false); setJustBookedId(null); setShowPortalHub(true); }}
-                      className="flex-1 py-1 px-4 border border-slate-200 text-slate-700 font-bold font-display hover:bg-slate-50 rounded-xl text-sm transition-colors"
+                      className="w-full sm:flex-1 py-2.5 px-4 border border-slate-200 text-slate-700 font-bold font-display hover:bg-slate-50 rounded-xl text-sm transition-colors flex items-center justify-center"
                     >
                       View in Hub
                     </button>
@@ -503,7 +503,7 @@ export default function ToursAndAdmissionsPortal({
                     />
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3.5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     <div>
                       <label className="block text-xs font-semibold text-slate-700 mb-1">Phone Number *</label>
                       <input
@@ -528,7 +528,7 @@ export default function ToursAndAdmissionsPortal({
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3.5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     <div>
                       <label className="block text-xs font-semibold text-slate-700 mb-1">Preferred Date *</label>
                       <input
@@ -568,17 +568,17 @@ export default function ToursAndAdmissionsPortal({
                     </select>
                   </div>
 
-                  <div className="pt-4 border-t border-slate-100 flex justify-end gap-2.5">
+                  <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:justify-end gap-2.5 w-full">
                     <button
                       type="button"
                       onClick={() => setIsBookTourOpen(false)}
-                      className="h-10 px-4 border border-slate-200 rounded-xl font-bold font-display hover:bg-slate-50 text-slate-700 text-sm transition-colors"
+                      className="h-11 px-4 border border-slate-200 rounded-xl font-bold font-display hover:bg-slate-50 text-slate-700 text-sm transition-colors w-full sm:w-auto"
                     >
                       Close
                     </button>
                     <button
                       type="submit"
-                      className="h-10 px-5 bg-gradient-to-r from-echelon-gold to-amber-500 text-white rounded-xl font-bold font-display hover:opacity-95 text-sm flex items-center gap-1.5 transition-all shadow-md shadow-orange-500/15"
+                      className="h-11 px-5 bg-gradient-to-r from-echelon-gold to-amber-500 text-white rounded-xl font-bold font-display hover:opacity-95 text-sm flex items-center justify-center gap-1.5 transition-all shadow-md shadow-orange-500/15 w-full sm:w-auto"
                     >
                       Book Free Visitation <ArrowRight className="w-4 h-4" />
                     </button>
@@ -591,21 +591,21 @@ export default function ToursAndAdmissionsPortal({
       )}
 
       {/* 3. FLOATING PARENT PORTAL HUB TRAY (WIDGET TO VIEW REGISTERED ENQUIRIES) */}
-      <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3.5">
+      <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-40 flex flex-col items-end gap-3.5">
         {(applications.length > 0 || tours.length > 0) && !showPortalHub && (
           <button
             onClick={() => setShowPortalHub(true)}
-            className="flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-echelon-blue to-blue-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all font-bold hover:scale-105 group border-2 border-white animate-bounce"
+            className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2.5 sm:py-3 bg-gradient-to-r from-echelon-blue to-blue-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all font-bold hover:scale-105 group border-2 border-white animate-bounce text-xs sm:text-sm"
             id="parent-hub-floating-btn"
           >
-            <GraduationCap className="w-5 h-5 text-echelon-gold" />
-            <span className="text-sm font-display">Parent Portal Hub ({applications.length + tours.length})</span>
+            <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-echelon-gold" />
+            <span className="font-display">Parent Portal Hub ({applications.length + tours.length})</span>
           </button>
         )}
 
         {/* Floating Portal Drawer */}
         {showPortalHub && (
-          <div className="w-92 max-w-sm bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden flex flex-col max-h-[500px] animate-in slide-in-from-bottom-5 duration-300">
+          <div className="w-[calc(100vw-2rem)] sm:w-92 max-w-sm bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden flex flex-col max-h-[500px] animate-in slide-in-from-bottom-5 duration-300">
             {/* Drawer Header */}
             <div className="bg-slate-900 p-4 text-white flex justify-between items-center border-b border-slate-800">
               <div className="flex items-center gap-2">

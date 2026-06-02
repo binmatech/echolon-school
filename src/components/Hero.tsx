@@ -36,7 +36,7 @@ export default function Hero({ onApplyClick, onBookTourClick }: HeroProps) {
           </p>
 
           {/* Educational Highlights Row */}
-          <div className="grid grid-cols-3 gap-3.5 pt-2 max-w-xl">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 max-w-xl">
             <div className="flex items-center gap-2 text-slate-200">
               <CheckCircle className="w-4 h-4 text-echelon-blue flex-shrink-0" />
               <span className="text-xs font-semibold">Caring & Dedicated Staff</span>

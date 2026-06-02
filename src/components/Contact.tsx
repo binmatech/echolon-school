@@ -164,6 +164,46 @@ export default function Contact() {
 
         </div>
 
+        {/* ROW 3: GOOGLE MAPS EMBED */}
+        <div className="mt-12 text-left">
+          <div className="bg-white rounded-2xl border border-slate-100 p-6 sm:p-8 shadow-sm overflow-hidden">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-50 pb-5 mb-6">
+              <div>
+                <h3 className="text-lg font-bold text-slate-900 font-display flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-echelon-blue" />
+                  <span>School Location Map</span>
+                </h3>
+                <p className="text-xs text-slate-500 font-light mt-1">
+                  Suite 4, Echelon Way, off Idimu-Ikotun Road, Alimosho LGA, Lagos State, Nigeria.
+                </p>
+              </div>
+              <a 
+                href="https://maps.google.com/?q=Ikotun,Lagos" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-xs font-bold text-echelon-blue hover:text-echelon-blue-hover flex items-center gap-1.5 bg-blue-50 px-3.5 py-2 rounded-xl border border-blue-100 transition-colors"
+              >
+                <span>Open in Google Maps</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            </div>
+
+            <div className="w-full h-80 sm:h-[400px] rounded-xl overflow-hidden border border-slate-100 shadow-inner relative">
+              <iframe
+                title="Echelon Schools Campus Map"
+                src="https://maps.google.com/maps?q=Suite%204,%20Echelon%20Way,%20off%20Idimu-Ikotun%20Road,%20Alimosho,%20Lagos&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              />
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
