@@ -15,11 +15,11 @@ export default function Hero({ onApplyClick, onBookTourClick }: HeroProps) {
           src="https://imgur.com/B33NaG1.png"
           alt="Happy Nigerian Pupils in Classroom Echelon Schools"
           referrerPolicy="no-referrer"
-          className="w-full h-full object-cover opacity-35 object-center animate-pulse-slow"
+          className="w-full h-full object-cover opacity-75 md:opacity-85 object-center animate-fade-in duration-700"
         />
         {/* Sky-Blue / Royal-Navy / Golden Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-slate-950 via-slate-950/85 to-echelon-blue/45"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/60 to-slate-950"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-slate-950/85 via-slate-950/60 to-echelon-blue/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/35 to-slate-950"></div>
       </div>
 
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -86,7 +86,7 @@ export default function Hero({ onApplyClick, onBookTourClick }: HeroProps) {
 
             <div className="space-y-1">
               <h3 className="text-lg font-bold text-white font-display">Admissions Information</h3>
-              <p className="text-xs text-slate-350">Echelon Nursery & Primary School admissions are fully online</p>
+              <p className="text-xs text-white">Echelon Nursery & Primary School admissions are fully online</p>
             </div>
 
             <div className="space-y-4">

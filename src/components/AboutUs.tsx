@@ -151,8 +151,12 @@ export default function AboutUs() {
 
         {/* ROW 3: CORE VALUES DISPLAY */}
         <div className="mt-20">
-          <div className="text-center space-y-3 mb-12">
-            <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#F4B400] font-mono bg-[#F4B400]/10 px-3.5 py-1.5 rounded-full border border-amber-150">Our Pillars</span>
+          <div className="text-center space-y-4 mb-12">
+            <div className="inline-block">
+              <span className="inline-block text-[10px] font-extrabold uppercase tracking-widest text-[#F4B400] font-mono bg-[#F4B400]/10 px-3.5 py-1.5 rounded-full border border-amber-150">
+                Our Pillars
+              </span>
+            </div>
             <h3 className="text-2xl md:text-4xl font-black text-slate-950 uppercase tracking-tighter font-display leading-[1.1]">Values That Define Echelon Schools</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
